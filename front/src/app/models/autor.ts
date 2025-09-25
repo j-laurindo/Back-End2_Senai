@@ -6,4 +6,3 @@ export interface Autor {
     nacionalidade?: string | null;
     biografia?: string | null;
 }
-
