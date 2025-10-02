@@ -7,3 +7,4 @@ export interface Editora {
     email?: string | null;
     site?: string | null;
 }
+
