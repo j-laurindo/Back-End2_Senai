@@ -1,1 +1,26 @@
-<p>editoras.component works!</p>
+<section style="max-width:900px;margin:2rem auto;padding:0 1rem">
+    <h1>Editoras</h1>
+
+    @if (carregando()) {
+        <p>Carregando…</p>
+    } @else if (erro()) {
+        <p style="color:#c62828">{{ erro() }}</p>
+    } @else {
+        <ul style="padding-left:1.25rem">
+            @for (e of editora(); track e.id) {
+            <li style="margin:.25rem 0">
+                <strong>{{ e.editora }}</strong>
+                <div style="color:#555">{{ e.cnpj }}</div>
+                <div style="color:#555">{{ e.endereco }}</div>
+                @if (e.telefone) { <div style="color:#555">{{ e.telefone }}</div> }
+                @if (e.email) { <div style="color:#555">{{ e.email }}</div> }
+                @if (e.site) { <div style="color:#555">{{ e.site }}</div> }
+            </li> 
+          }
+        </ul>
+      }
+
+    <nav style="margin-top:1rem">
+        <a routerLink="/">Voltar ao início</a>
+    </nav>
+</section>
